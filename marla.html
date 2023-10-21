@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marla to Square Feet Converter</title>
+</head>
+<body>
+    <div class="converter">
+        <h1>Marla to Square Feet Converter</h1>
+        <form id="areaConverterForm">
+            <label for="marla">Enter Area in Marla:</label>
+            <input type="number" id="marla" step="0.01" required>
+            <input type="button" value="Convert" onclick="convertArea()">
+        </form>
+        <p>Result in Square Feet: <span id="result"></span></p>
+    </div>
+
+    <a href="yard.html">yard into square feet</a>
+
+    <script>
+        function convertArea() {
+            // Get the input value in Marla
+            var marlaInput = parseFloat(document.getElementById('marla').value);
+
+            // Check if the input is a number
+            if (!isNaN(marlaInput)) {
+                // Convert Marla to Square Feet
+                var squareFeetResult = marlaInput * 225;
+
+                // Display the result
+                document.getElementById('result').textContent = squareFeetResult.toFixed(2) + " sq. ft";
+            } else {
+                alert("Please enter a valid number for Marla area.");
+            }
+        }
+    </script>
+</body>
+</html>
