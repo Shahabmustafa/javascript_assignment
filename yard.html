@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yards to Square Feet Converter</title>
+</head>
+<body>
+    <div class="converter">
+        <h1>Yards to Square Feet Converter</h1>
+        <form id="areaConverterForm">
+            <label for="yards">Enter Area in Yards:</label>
+            <input type="number" id="yards" step="0.01" required>
+            <input type="button" value="Convert" onclick="convertArea()">
+        </form>
+        <p>Result in Square Feet: <span id="result"></span></p>
+    </div>
+
+    <script>
+        function convertArea() {
+            // Get the input value in Yards
+            var yardsInput = parseFloat(document.getElementById('yards').value);
+
+            // Check if the input is a number
+            if (!isNaN(yardsInput)) {
+                // Convert Yards to Square Feet
+                var squareFeetResult = yardsInput * 9;
+
+                // Display the result
+                document.getElementById('result').textContent = squareFeetResult.toFixed(2) + " sq. ft";
+            } else {
+                alert("Please enter a valid number for Yards area.");
+            }
+        }
+    </script>
+</body>
+</html>
